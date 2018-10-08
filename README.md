@@ -1,18 +1,18 @@
 # Install docker & using
-// Build docker
+**Build docker**
 
-docker-compose build
-
-
-// Run server
-
-docker-compose up
+`docker-compose build`
 
 
-// Access SSH to server
+**Run server**
 
-docker exec -it jacpa_server bash
+`docker-compose up`
 
-// Run with winpty when using gitbash
 
-winpty docker exec -it jacpa_server bash
+**Access SSH to server**
+
+`docker exec -it jacpa_server bash`
+
+*Run with winpty when using gitbash*
+
+`winpty docker exec -it jacpa_server bash`
