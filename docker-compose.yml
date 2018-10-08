@@ -12,3 +12,16 @@ services:
       - SYS_ADMIN
     ports:
       - 80:80
+
+  db_server:
+    restart: always
+    image: mariadb
+    container_name: jacpa_db
+    environment:
+      - "MYSQL_ROOT_PASSWORD=rikkei"
+      - "MYSQL_USER=root"
+      - "MYSQL_DATABASE=jacpa"
+    # volumes:
+    #  - ./jacpa-db:/var/lib/mysql
+    ports:
+      - "3306:3306"
