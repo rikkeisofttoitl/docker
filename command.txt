@@ -1,0 +1,6 @@
+docker-compose build
+docker-compose up
+docker exec -it jacpa_server bash
+
+// Chạy bằng cmd or git
+winpty exec -it jacpa_server bash

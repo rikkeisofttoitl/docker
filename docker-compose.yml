@@ -1,0 +1,14 @@
+version: "3"
+services:
+  web_server:
+    restart: always
+    build:
+       context: ./
+       dockerfile: web.dockerfile
+    container_name: jacpa_server
+    volumes:
+      - ./SourceCode:/var/www/html
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - 80:80
