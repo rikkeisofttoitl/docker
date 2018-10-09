@@ -21,9 +21,6 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 # php
 RUN yum -y install php72w php72w-opcache php72w-cli php72w-common php72w-gd php72w-intl php72w-mbstring php72w-mcrypt php72w-mysql php72w-mssql php72w-pdo php72w-pear php72w-soap php72w-xml php72w-xmlrpc
 
-# mariadb
-# RUN yum -y install mariadb-server
-
 # apache
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
   systemd-tmpfiles-setup.service ] || rm -f $i; done); \
@@ -53,6 +50,8 @@ COPY config/v-host.conf /etc/httpd/conf.d/
 
 # create webserver-default directory
 RUN mkdir -p /var/www/html
+RUN curl https://get.fuelphp.com/oil | sh
+WORKDIR /var/www/html/
 
 EXPOSE 80
 

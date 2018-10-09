@@ -15,7 +15,7 @@ services:
 
   db_server:
     restart: always
-    image: mariadb
+    image: "mariadb:10.3"
     container_name: jacpa_db
     environment:
       - "MYSQL_ROOT_PASSWORD=rikkei"
